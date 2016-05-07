@@ -1,0 +1,33 @@
+prop:
+   msg: default 
+
+details:
+ stage:
+  normalizer:
+   inputfolder:
+    normalizerinputfolder
+   outputfolder:
+    normalizeroutpuptfolder 
+  aggregator:
+   inputfolder:
+    aggregatorinputfolder
+   outputfolder:
+    aggregatoroutpuptfolder 
+ source: 
+  bindb:
+   inputfile:
+    - xml
+   outputfile:
+    binout
+  cpt:
+   inputfile:
+    - csv
+   outputfile:
+    cptout 
+  normalized:
+   inputfile:
+    - binnormalized
+    - cptnormalized
+    - overridesnormalized
+   outputfile:
+    aggregatornormalizedfile

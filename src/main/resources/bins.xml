@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bins>
+	<bin>
+		<number>100510</number>
+		<brand>LOCAL CARD</brand>
+		<bank></bank>
+		<type></type>
+		<level></level>
+		<isocountry>UNITED KINGDOM</isocountry>
+		<info></info>
+		<country_iso>GB</country_iso>
+		<country2_iso>GBR</country2_iso>
+		<country3_iso>826</country3_iso>
+		<www>NULL</www>
+		<phone>NULL</phone>
+		<former_bank>NULL</former_bank>
+		<address>NULL</address>
+	</bin>
+	<bin>
+		<number>100515</number>
+		<brand>LOCAL CARD</brand>
+		<bank></bank>
+		<type></type>
+		<level></level>
+		<isocountry>NORWAY</isocountry>
+		<info></info>
+		<country_iso>NO</country_iso>
+		<country2_iso>NOR</country2_iso>
+		<country3_iso>578</country3_iso>
+		<www>NULL</www>
+		<phone>NULL</phone>
+		<former_bank>NULL</former_bank>
+		<address>NULL</address>
+	</bin>
+	<bin>
+		<number>103753</number>
+		<brand>LOCAL CARD</brand>
+		<bank>I&amp;M BANK</bank>
+		<type>DEBIT</type>
+		<level>PREPAID</level>
+		<isocountry>KENYA</isocountry>
+		<info></info>
+		<country_iso>KE</country_iso>
+		<country2_iso>KEN</country2_iso>
+		<country3_iso>404</country3_iso>
+		<www></www>
+		<phone></phone>
+		<former_bank>NULL</former_bank>
+		<address>NULL</address>
+	</bin>
+	<bin>
+		<number>104001</number>
+		<brand>LOCAL CARD</brand>
+		<bank>LUXURY JEWELLERY CLASS (LJC) - TDFS</bank>
+		<type></type>
+		<level></level>
+		<isocountry>CANADA</isocountry>
+		<info></info>
+		<country_iso>CA</country_iso>
+		<country2_iso>CAN</country2_iso>
+		<country3_iso>124</country3_iso>
+		<www></www>
+		<phone></phone>
+		<former_bank></former_bank>
+		<address></address>
+	</bin>
+</bins>
