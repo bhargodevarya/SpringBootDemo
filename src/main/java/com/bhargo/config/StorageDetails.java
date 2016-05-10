@@ -3,6 +3,9 @@ package com.bhargo.config;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties(value = "details")
-public class StorageDetails {
+public class StorageDetails extends Config{
 
 	private Map<String, Folder> stage;
 	private Map<String, locations> source;    
@@ -80,4 +83,10 @@ public class StorageDetails {
 		}		
 	}
 
+	@Override
+	public String toString() {
+		return "StorageDetails [stage=" + stage + ", source=" + source + "]";
+	}
+
+	
 }

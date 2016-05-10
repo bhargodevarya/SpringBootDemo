@@ -13,6 +13,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 
 import com.bhargo.config.AppConfig;
+import com.bhargo.config.Config;
+import com.bhargo.config.ConfigService;
 import com.bhargo.config.StorageDetails;
 import com.bhargo.service.BinFileParser;
 import com.bhargo.service.CptFileParser;
@@ -32,6 +34,9 @@ public class SpringBootDemoApplication implements CommandLineRunner{
 	
 	@Autowired
 	private StorageDetails storageDetails;
+	
+	@Autowired
+	private ConfigService configService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
@@ -76,6 +81,13 @@ public class SpringBootDemoApplication implements CommandLineRunner{
 	public StorageDetails storageDetails() {
 		return new StorageDetails();
 	}
+	
+	@Bean(initMethod = "init")
+	public ConfigService configService() {
+		ConfigService configService = new ConfigService();
+		//configService.init();
+		return configService;
+	}
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -87,8 +99,7 @@ public class SpringBootDemoApplication implements CommandLineRunner{
 		System.out.println("parser from the factory for cpt is " + FileParserFactory.getParser("cpt"));
 		System.out.println("parser from the factory for bin is " + FileParserFactory.getParser("bin"));
 		
-		for(int i =0;i<=4; i++)
-			System.out.println();
+        putSpace(4);
 		
 		//BinXML parsing logic
 		JAXBContext con = JAXBContext.newInstance(ObjectFactory.class);
@@ -107,11 +118,26 @@ public class SpringBootDemoApplication implements CommandLineRunner{
 		bins.getBin().stream().filter(bin -> bin.getBrand().equals("American Express")).forEach(System.out::println);	
 		System.out.println();
 		System.out.println("end > Bin file contains the folowing data >>>>>");
-		for(int i =0;i<=4; i++)
-			System.out.println();
+		putSpace(4);
 		
 		//yml storage details demo
 		storageDetails.getStage().entrySet().forEach(entry -> System.out.println("key is " + entry.getKey() + " value is " + entry.getValue()));
 		storageDetails.getSource().entrySet().forEach(entry -> System.out.println("key is " + entry.getKey() + " value is " + entry.getValue()));
+		
+		putSpace(2);
+		configService.getConfigSet().forEach(System.out::println);
+		
+		putSpace(2);
+		
+		
+		System.out.println("these are the details");
+		configService.showLocations("normalizer");
+		putSpace(2);
+		configService.showLocations("aggregator");
+	}
+	
+	void putSpace(int j) {
+		for(int i =0;i<=j; i++)
+			System.out.println();
 	}
 }
